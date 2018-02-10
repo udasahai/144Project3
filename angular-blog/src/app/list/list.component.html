@@ -1,0 +1,10 @@
+<div id="lister">
+<button type="button" (click)="createPost()">New Post</button>
+<ul class="heroes"> 
+	<li *ngFor="let post of posts">
+		<a routerLink="/edit/{{post.postid}}">
+		<span class="badge">{{post.modified | date:'short'}}</span>{{ post.title }}
+		</a>
+	</li>
+</ul> 
+</div>
