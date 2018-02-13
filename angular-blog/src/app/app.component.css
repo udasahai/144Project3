@@ -1,4 +1,5 @@
 #wrapper {
     width: 100%;
     overflow: hidden; /* will contain if #first is longer than #second */
+    background-color: white;
 }

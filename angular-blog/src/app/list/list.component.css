@@ -1,7 +1,7 @@
 #lister 
 {
 	/*background-color: pink; */
-	width: 40%;
+	width: 30%;
 	float: left;
 }
 
@@ -20,6 +20,8 @@
   height: 1.6em;
   border-radius: 4px;
   width: 100%;
+  overflow-x: auto; 
+  overflow-y: auto;
 }
  
 .heroes li:hover {
@@ -42,7 +44,7 @@
  
 .heroes .badge {
   display: inline-block;
-  font-size: small;
+  font-size: xx-small;
   color: white;
   padding: 0.8em 0.7em 0 0.7em;
   background-color: #607D8B;
@@ -54,5 +56,5 @@
   min-width: 16px;
   text-align: right;
   margin-right: .8em;
-  border-radius: 4px 0 0 4px;
+  border-radius: 4px 4px 4px 4px;
 }

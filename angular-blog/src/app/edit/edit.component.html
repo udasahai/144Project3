@@ -2,7 +2,7 @@
 <div id="inner"><form #myForm="ngForm" #frm>
 
 <label>Title</label><br>
-<input [(ngModel)]="title" type="text"  (keyup)="saveBlogWithoutTimeChange()" value="{{title}}" name="title" #Title="ngModel">
+<input [(ngModel)]="title" type="text" (keyup)="updateArray()" value="{{title}}" name="title" #Title="ngModel">
 <br>
 <br>
 <label>Body</label> <br>
@@ -10,5 +10,7 @@
 <button type="button" (click)="saveBlog(myForm)" [disabled]="!Body.dirty && !Title.dirty">Save</button>
 <button type="button" (click)="toPreview()">Preview</button>
 <button type="button" (click)="deletePost()">Delete</button>
-</form></div>
+</form><br>
+<span id="modTime"> Last Modified: {{post.modified | date: 'medium'}} </span>
+</div>
 </div>

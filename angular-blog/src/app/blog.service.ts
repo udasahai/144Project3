@@ -12,9 +12,17 @@ export class Post {
 export class BlogService {
 
 	private posts: Post[] = [];
-	maxPostId: number;		
+	maxPostId: number;
+//  private listPosts: Post[] = [];		
 
   constructor() { this.maxPostId=0; this.fetchPosts(); }
+
+
+  // setListPosts(titleList: Post[]){
+  //   this.listPosts = titleList;
+  // }
+
+  // getListPosts(): Post[] { return this.listPosts; }
 
 
   fetchPosts(): void{
@@ -37,13 +45,20 @@ export class BlogService {
   	return null;
   }
 
+  updateCache(post: Post): void {
+    for(let i:number=0;i<this.posts.length;i++) {
+      if(this.posts[i].postid == post.postid) {
+        this.posts[i] = post;
+      }
+    }
+  }
 
   newPost(): Post {
   	let temp:Post = new Post();
   	temp.postid = this.maxPostId + 1;
   	temp.created = new Date(); 
   	temp.modified = new Date();
-  	temp.title = "Untitled"; 
+  	temp.title = ""; 
   	temp.body = ""; 
   	this.maxPostId++; 
   	localStorage.setItem((temp.postid).toString(),JSON.stringify(temp));

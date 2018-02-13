@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit,HostListener,Directive,HostBinding,Input} from '@angular/core';
 import { Post, BlogService } from '../blog.service';
 import { Form } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import {Router} from '@angular/router'
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -32,6 +33,12 @@ export class EditComponent implements OnInit {
     this.router.navigateByUrl('/');
   }
 
+  updateArray(): void {
+    this.post.title = this.title; 
+    this.post.body = this.body; 
+    this.blogService.updateCache(this.post);
+  }
+
   toPreview():void {
     this.post.title = this.title;   
     this.post.body = this.body;
@@ -59,6 +66,8 @@ export class EditComponent implements OnInit {
   	this.blogService.updatePost(this.post);
   }
 
+
+  @HostListener('window:beforeunload')
   saveBlog(): void {
   	this.post.title = this.title; 
   	this.post.body = this.body;

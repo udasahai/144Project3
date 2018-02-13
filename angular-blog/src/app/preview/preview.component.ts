@@ -17,6 +17,7 @@ export class PreviewComponent implements OnInit {
   title:string = "";
   body:string = "";	
   parsedBody:string = "";
+  parsedTitle:string = "";
 
   constructor(private blogService: BlogService,private route: ActivatedRoute,private router: Router) {
   }
@@ -32,12 +33,16 @@ export class PreviewComponent implements OnInit {
   	this.title = this.post.title;
   	this.body = this.post.body;
 
-  	var reader = new Parser();
+  var reader = new Parser();
 	var writer = new HtmlRenderer();
 	var parsed = reader.parse(this.body); // parsed is a 'Node' tree
 	// transform parsed if you like...
 	this.parsedBody = writer.render(parsed); // result is a String
 	document.getElementById("common").innerHTML = this.parsedBody;
+
+  var parTitle = reader.parse(this.title);
+  this.parsedTitle = writer.render(parTitle);
+  document.getElementById("badge").innerHTML = this.parsedTitle;
   }
 
   ngOnInit() {
