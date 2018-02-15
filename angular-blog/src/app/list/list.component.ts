@@ -3,10 +3,14 @@ import { Post, BlogService } from '../blog.service';
 import {Router} from '@angular/router'
 import { DatePipe } from '@angular/common';
 
+import { fadeInAnimation } from '../_animations/index';
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./list.component.css'],
+  animations: [fadeInAnimation],
+  host: { '[@fadeInAnimation]': '' }
 })
 export class ListComponent implements OnInit {
 

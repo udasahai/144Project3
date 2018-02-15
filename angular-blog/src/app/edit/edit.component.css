@@ -2,6 +2,7 @@
 {
 	width: 60%;
 	float: left; 
+	background-color: #808080;
 }
 
 #inner
@@ -31,7 +32,6 @@ input[type=text], textarea {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
 
 label
 {
