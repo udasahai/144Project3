@@ -12,7 +12,7 @@ import { slideInOutAnimation } from '../_animations/index';
   templateUrl: './preview.component.html',
   styleUrls: ['./preview.component.css'],
   animations: [slideInOutAnimation, fadeInAnimation],
-  host: { '[@slideInOutAnimation]': '', '[@fadeInAnimation]': ''}
+
 })
 export class PreviewComponent implements OnInit {
 
