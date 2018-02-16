@@ -1,12 +1,12 @@
-<div id="former">
-<div id="inner"><form #myForm="ngForm" #frm>
+<div id="former" *ngIf="post!=undefined&&post!=null">
+<div id="inner"><form #myForm="ngForm">
 
 <label>Title</label><br>
-<input [(ngModel)]="title" type="text" (keyup)="updateArray()" value="{{title}}" name="title" #Title="ngModel">
+<input [(ngModel)]="post.title" type="text" value="{{post.title}}" name="title" #Title="ngModel">
 <br>
 <br>
 <label>Body</label> <br>
-<textarea rows="25" cols="50" name="body" [(ngModel)]="body" #Body="ngModel">{{body}}</textarea> <br>
+<textarea rows="25" cols="50" name="body" [(ngModel)]="post.body" #Body="ngModel">{{post.body}}</textarea> <br>
 <button type="button" (click)="saveBlog(myForm)" [disabled]="!Body.dirty && !Title.dirty">Save</button>
 <button type="button" (click)="toPreview()">Preview</button>
 <button type="button" (click)="deletePost()">Delete</button>

@@ -20,14 +20,15 @@
   height: 1.6em;
   border-radius: 4px;
   width: 100%;
-  overflow-x: auto; 
-  overflow-y: auto;
+  overflow-x: hidden; 
 }
  
 .heroes li:hover {
   color: #607D8B;
   background-color: #DDD;
   left: .1em;
+  overflow-x: auto;
+  overflow-y: auto;
 }
  
 .heroes a {
