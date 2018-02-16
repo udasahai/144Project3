@@ -9,6 +9,7 @@ import { ListComponent } from './list/list.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { PreviewComponent } from './preview/preview.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PreviewComponent } from './preview/preview.component';
   imports: [
   	FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+	BrowserAnimationsModule
   ],
   providers: [BlogService],
   bootstrap: [AppComponent]

@@ -4,11 +4,15 @@ import { Post, BlogService } from '../blog.service';
 import { ActivatedRoute } from '@angular/router';
 import {Router} from '@angular/router'
 
+import { fadeInAnimation } from '../_animations/index';
+import { slideInOutAnimation } from '../_animations/index';
 
 @Component({
   selector: 'app-preview',
   templateUrl: './preview.component.html',
-  styleUrls: ['./preview.component.css']
+  styleUrls: ['./preview.component.css'],
+  animations: [slideInOutAnimation, fadeInAnimation],
+  host: { '[@slideInOutAnimation]': '', '[@fadeInAnimation]': ''}
 })
 export class PreviewComponent implements OnInit {
 

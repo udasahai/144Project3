@@ -17,7 +17,7 @@
   background-color: #EEE;
   margin: .5em;
   padding: .3em 0;
-  height: 1.6em;
+  height: 10%;
   border-radius: 4px;
   width: 100%;
   overflow-x: hidden; 
@@ -27,8 +27,6 @@
   color: #607D8B;
   background-color: #DDD;
   left: .1em;
-  overflow-x: auto;
-  overflow-y: auto;
 }
  
 .heroes a {

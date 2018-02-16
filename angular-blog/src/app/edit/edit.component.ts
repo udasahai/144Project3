@@ -5,11 +5,14 @@ import { ActivatedRoute } from '@angular/router';
 import {Router} from '@angular/router'
 import { DatePipe } from '@angular/common';
 
+import { fadeInAnimation } from '../_animations/index';
+import { slideInOutAnimation } from '../_animations/index';
 
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  styleUrls: ['./edit.component.css'],
+  animations: [slideInOutAnimation, fadeInAnimation],
 })
 export class EditComponent implements OnInit {
 
@@ -25,8 +28,6 @@ export class EditComponent implements OnInit {
   ngOnInit() {
   	this.route.params.subscribe(() => this.getPost());
   }
-
-
 
   deletePost():void {
     this.blogService.deletePost(this.post.postid);
@@ -69,13 +70,6 @@ export class EditComponent implements OnInit {
   	this.blogService.updatePost(this.post);
   }
 
-  // saveBlog2(Mform: any): void {
-  //   this.post.title = this.title; 
-  //   this.post.body = this.body;
-  //   this.post.modified = new Date();
-  //   this.blogService.updatePost(this.post);
-  //   Mform.form.markAsPristine();
-  // }
 
   @HostListener('window:beforeunload')
   saveBlog(): void {
