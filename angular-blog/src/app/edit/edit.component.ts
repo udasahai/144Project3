@@ -18,8 +18,8 @@ export class EditComponent implements OnInit {
 
   post: Post = new Post();
   posts: Post[] = [];
-  title:string = "";
-  body:string = "";
+  // title:string = "";
+  // body:string = "";
   @ViewChild('myForm') myform: any;
 
   constructor(private blogService: BlogService,private route: ActivatedRoute,private router: Router) {
@@ -35,15 +35,15 @@ export class EditComponent implements OnInit {
   }
 
   updateArray(): void {
-    this.post.title = this.title; 
-    this.post.body = this.body; 
+    // this.post.title = this.title; 
+    // this.post.body = this.body; 
     this.blogService.updateCache(this.post);
   }
 
   toPreview():void {
-    this.post.title = this.title;   
-    this.post.body = this.body;
-    this.blogService.updatePost(this.post);
+    // this.post.title = this.title;   
+    // this.post.body = this.body;
+    this.saveBlog();
     this.router.navigateByUrl('/preview/' + this.post.postid);
   }
 
@@ -58,23 +58,23 @@ export class EditComponent implements OnInit {
 
   	let pid:number = Number(this.route.snapshot.paramMap.get('id'));
   	this.post = this.blogService.getPost(pid);
-    if(this.post != undefined && this.post != null) {
-    	this.title = this.post.title;
-    	this.body = this.post.body;
-    }
+    // if(this.post != undefined && this.post != null) {
+    // 	// this.title = this.post.title;
+    // 	// this.body = this.post.body;
+    // }
   }
 
   saveBlogWithoutTimeChange() {
-  	this.post.title = this.title; 
-  	this.post.body = this.body;
+  	// this.post.title = this.title; 
+  	// this.post.body = this.body;
   	this.blogService.updatePost(this.post);
   }
 
 
   @HostListener('window:beforeunload')
   saveBlog(): void {
-  	this.post.title = this.title; 
-  	this.post.body = this.body;
+  	// this.post.title = this.title; 
+  	// this.post.body = this.body;
   	this.post.modified = new Date();
   	this.blogService.updatePost(this.post);
     this.myform.form.markAsPristine();
