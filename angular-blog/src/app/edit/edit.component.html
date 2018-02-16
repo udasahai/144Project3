@@ -2,7 +2,7 @@
 <div id="inner" [@fadeInAnimation]="fader"><form #myForm="ngForm" #frm>
 <label>Title</label><br>
 <div>
-<input [(ngModel)]="title" type="text" (keyup)="updateArray()" value="{{title}}" name="title" #Title="ngModel">
+<input [(ngModel)]="post.title" type="text" (keyup)="updateArray()" value="{{post.title}}" name="title" #Title="ngModel">
 </div>
 <br>
 <br>
