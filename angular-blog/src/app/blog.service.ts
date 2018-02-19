@@ -18,12 +18,6 @@ export class BlogService {
   constructor() { this.maxPostId=0; this.fetchPosts(); }
 
 
-  // setListPosts(titleList: Post[]){
-  //   this.listPosts = titleList;
-  // }
-
-  // getListPosts(): Post[] { return this.listPosts; }
-
 
   fetchPosts(): void{
   	for(let i=0;i<localStorage.length;i++) {
@@ -45,13 +39,6 @@ export class BlogService {
   	return null;
   }
 
-  updateCache(post: Post): void {
-    for(let i:number=0;i<this.posts.length;i++) {
-      if(this.posts[i].postid == post.postid) {
-        this.posts[i] = post;
-      }
-    }
-  }
 
   newPost(): Post {
   	let temp:Post = new Post();
