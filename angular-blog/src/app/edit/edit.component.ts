@@ -34,11 +34,6 @@ export class EditComponent implements OnInit {
     this.router.navigateByUrl('/');
   }
 
-  updateArray(): void {
-    // this.post.title = this.title; 
-    // this.post.body = this.body; 
-    this.blogService.updateCache(this.post);
-  }
 
   toPreview():void {
     // this.post.title = this.title;   
